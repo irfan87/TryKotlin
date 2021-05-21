@@ -1,16 +1,17 @@
-class Item(val itemName: String, val itemPrice: Double, val itemQuantity: Int) {
-    fun itemDesc() {
-        val priceResult = calcPrice(itemPrice, itemQuantity)
+import CapitalizeHelper.capitalizeString
 
-        println("""
-            Item: $itemName
-            Price: RM$itemPrice
-            Quantity: $itemQuantity
-            Total: RM$priceResult
-        """.trimIndent())
-    }
+enum class ItemType {
+    TROUSERS,
+    SHIRTS,
+    INNER,
+    WATCH,
+    COMPUTER,
+    SMARTPHONE,
+    NONE
+}
 
-    fun calcPrice(price: Double, itemQty: Int): Double {
-        return price * itemQty
+class Item(val name: String = "", var quantity: Int = 0, val type: ItemType = ItemType.NONE) {
+    override fun toString(): String {
+        return "${name.capitalizeString()} - $quantity"
     }
 }

@@ -1,20 +1,9 @@
 fun main() {
-    val item = "watch"
-    val price = 12.10
-    val quantity = 2
+    val user = User("john doe")
+    val firstItem = Item("apple watch", 2, ItemType.WATCH)
 
-    val watch = Item(item, price.toDouble(), quantity)
-    val shirt = Item("t-shirt", 31.00, 3)
-    val pants = Item("pants", 25.20, 5)
-    val boxers = Item("boxers", 20.00, 10)
+    user.item = firstItem
+//    firstItem.quantity = 2
 
-    println("Item Description")
-    println()
-    watch.itemDesc()
-    println()
-    shirt.itemDesc()
-    println()
-    pants.itemDesc()
-    println()
-    boxers.itemDesc()
+    user.showUser()
 }
